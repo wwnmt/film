@@ -6,10 +6,14 @@ import com.wwn.film.gateway.common.exception.BizExceptionEnum;
 import com.wwn.film.gateway.common.exception.GunsException;
 import com.wwn.film.gateway.common.exception.GunsExceptionEnum;
 import com.wwn.film.gateway.common.user.CurrentUser;
+import com.wwn.film.gateway.properties.JwtProperties;
+import com.wwn.film.gateway.properties.RestProperties;
 import io.jsonwebtoken.JwtException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -25,6 +29,8 @@ import java.io.PrintWriter;
  * @author fengshuonan
  * @Date 2017/8/24 14:04
  */
+@Component
+@ConditionalOnProperty(prefix = RestProperties.REST_PREFIX, name = "auth-open", havingValue = "true", matchIfMissing = true)
 public class AuthFilter extends OncePerRequestFilter {
 
     private final Log logger = LogFactory.getLog(this.getClass());

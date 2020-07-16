@@ -7,7 +7,7 @@ package com.wwn.film.gateway.response;
  * Date: 2020-07-15
  * Time: 16:04
  */
-public class ResponseType<M> {
+public class ResponseVO<M> {
     // 返回状态【0-成功，1-业务失败，999-表示系统异常】
     private int status;
     // 返回信息
@@ -15,35 +15,35 @@ public class ResponseType<M> {
     // 返回数据实体;
     private M data;
 
-    private ResponseType() {
+    private ResponseVO() {
     }
 
-    public static <M> ResponseType<M> success(M m) {
-        ResponseType<M> responseVO = new ResponseType<>();
+    public static <M> ResponseVO<M> success(M m) {
+        ResponseVO<M> responseVO = new ResponseVO<>();
         responseVO.setStatus(0);
         responseVO.setData(m);
 
         return responseVO;
     }
 
-    public static <M> ResponseType<M> success(String msg) {
-        ResponseType<M> responseVO = new ResponseType<>();
+    public static <M> ResponseVO<M> success(String msg) {
+        ResponseVO<M> responseVO = new ResponseVO<>();
         responseVO.setStatus(0);
         responseVO.setMsg(msg);
 
         return responseVO;
     }
 
-    public static <M> ResponseType<M> serviceFail(String msg) {
-        ResponseType<M> responseVO = new ResponseType<>();
+    public static <M> ResponseVO<M> serviceFail(String msg) {
+        ResponseVO<M> responseVO = new ResponseVO<>();
         responseVO.setStatus(1);
         responseVO.setMsg(msg);
 
         return responseVO;
     }
 
-    public static <M> ResponseType<M> appFail(String msg) {
-        ResponseType<M> responseVO = new ResponseType<>();
+    public static <M> ResponseVO<M> appFail(String msg) {
+        ResponseVO<M> responseVO = new ResponseVO<>();
         responseVO.setStatus(999);
         responseVO.setMsg(msg);
 

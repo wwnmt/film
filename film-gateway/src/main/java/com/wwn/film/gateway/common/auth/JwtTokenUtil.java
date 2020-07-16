@@ -1,5 +1,6 @@
 package com.wwn.film.gateway.common.auth;
 
+import com.wwn.film.gateway.properties.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtException;
