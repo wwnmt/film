@@ -1,5 +1,8 @@
 package com.wwn.film.api.service.user;
 
+import com.wwn.film.api.service.user.vo.UserInfoModel;
+import com.wwn.film.api.service.user.vo.UserModel;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:

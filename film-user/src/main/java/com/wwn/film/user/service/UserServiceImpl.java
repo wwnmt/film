@@ -1,8 +1,8 @@
 package com.wwn.film.user.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.wwn.film.api.service.user.UserInfoModel;
-import com.wwn.film.api.service.user.UserModel;
+import com.wwn.film.api.service.user.vo.UserInfoModel;
+import com.wwn.film.api.service.user.vo.UserModel;
 import com.wwn.film.api.service.user.UserService;
 import com.wwn.film.user.dao.UserDOMapper;
 import com.wwn.film.user.entity.UserDO;
